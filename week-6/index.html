@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="This week we are using CSS Grid">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Working with CSS Grid</title>
+    <!-- add our Google font -->
+
+    <!-- add our CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- add our CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header>
+    <!-- logo container -->
+    <div>
+        <a href="index.html"><img src="./img/logo.png" alt="header logo"></a>
+    </div>
+    <!-- site navigation -->
+    <nav>
+        <menu>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+        </menu>
+    </nav>
+</header>
+<!-- add out hero image / masthead -->
+<section class="lesson-masthead">
+    <h1>Layouts with CSS Grid</h1>
+</section>
+<!-- add our main and aside -->
+<main>
+    <!-- 2 col row -->
+    <section>
+        <div>
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, eius eum necessitatibus non suscipit vero.</p>
+        </div>
+        <div>
+            <img src="./img/image-1.jpg" alt="image one">
+        </div>
+    </section>
+    <!-- 2 col row -->
+    <section>
+        <div>
+            <img src="./img/image-2.jpg" alt="image two">
+        </div>
+        <div>
+            <h3>Title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis culpa, earum incidunt iste molestias rerum vel. Ab culpa cum error, ipsam nesciunt tempore veniam?</p>
+        </div>
+    </section>
+    <!-- 6 col row -->
+    <section>
+        <div>
+            <img src="./img/image-3.jpg" alt="image three">
+        </div>
+        <div>
+            <img src="./img/image-4.jpg" alt="image four">
+        </div>
+        <div>
+            <img src="./img/image-5.jpg" alt="image five">
+        </div>
+        <div>
+            <img src="./img/image-6.jpg" alt="image six">
+        </div>
+        <div>
+            <img src="./img/image-1.jpg" alt="image one">
+        </div>
+        <div>
+            <img src="./img/image-2.jpg" alt="image two">
+        </div>
+    </section>
+</main>
+<aside>
+    <article>
+    <figure>
+        <img src="./img/image-4.jpg" alt="image four">
+        <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic magni nesciunt quasi repellendus temporibus voluptatem.</figcaption>
+    </figure>
+    </article>
+    <article>
+        <figure>
+            <img src="./img/image-4.jpg" alt="image four">
+            <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic magni nesciunt quasi repellendus temporibus voluptatem.</figcaption>
+        </figure>
+    </article>
+</aside>
+<!-- out footer will contain a logo, some text, and a quick contact form -->
+<footer>
+    <!-- logo -->
+    <div>
+        <a href="index.html"><img src="./img/logo.png" alt="footer logo"></a>
+    </div>
+    <!-- text -->
+    <div>
+        <h6>Footer title</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid commodi eius illum modi quae.</p>
+    </div>
+    <!-- form -->
+    <div>
+        <form action="somefile.php" method="post">
+            <p><input type="text" name="name" placeholder="Your Name"></p>
+            <p><input type="email" name="email" placeholder="Your Email"></p>
+            <p><textarea placeholder="Your message" </p>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</footer>
+</body>
+</html>
