@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="html page to place a pizza order">
+    <title>Pizza Order Form</title>
+    <!-- Google font added -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- CSS added-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <!-- I am using the div element for our logo container-->
+   <div>
+       <a href="Index.html">
+           <img src="images/logo-pizza.jpeg" alt="logo">
+       </a>
+   </div>
+   <h1>Where Every Slice Hits a High Note!</h1>
+<!-- site navigation -->
+    <nav>
+        <menu>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Find Locations</a></li>
+            <li><a href="#">Careers</a></li>
+        </menu>
+    </nav>
+</header>
+
+<main>
+   <section>
+       <form action="/submit-order" method="POST">
+           <section>
+               <div>
+                   <img src="images/pepperoni.jpeg" height="142" width="700" alt="pizza">
+               </div>
+           </section>
+<!--Using fieldset to group and organize elements together -->
+<!-- It will help displaying a border around the elements inside the group-->
+           <fieldset>
+               <!--legend is used with fieldset just to add a caption or title for the group-->
+               <legend>Customer Information</legend>
+
+               <label for="name">Full Name:</label>
+               <input type="text" id="name" name="name" required >
+
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" required >
+
+               <label for="phone">Phone Number:</label>
+               <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" required >
+           </fieldset>
+
+           <fieldset>
+               <legend>Delivery Options</legend>
+
+               <label><input type="radio" name="delivery" value="pickup" checked > Pick-up</label>
+               <label><input type="radio" name="delivery" value="delivery" > Delivery</label>
+
+               <div id="delivery-address">
+                   <label for="address">Delivery Address:</label>
+                   <input type="text" id="address" name="address" placeholder="123 Pizza St." >
+               </div>
+           </fieldset>
+
+           <fieldset>
+               <legend>Order Details</legend>
+
+               <label for="quantity">Number of Pizzas:</label>
+               <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required >
+
+               <label for="size">Size:</label>
+               <select id="size" name="size" required>
+                   <option value="">--Select Size--</option>
+                   <option value="small">Small</option>
+                   <option value="medium">Medium</option>
+                   <option value="large">Large</option>
+                   <option value="extra_large">Extra Large</option>
+               </select>
+
+               <!--Ctrl has to be pressed to select more than one topping-->
+                <label>Toppings:</label>
+                <div class="toppings-grid">
+                    <label><input type="checkbox" name="toppings" value="pepperoni"> Pepperoni</label>
+                    <label><input type="checkbox" name="toppings" value="mushrooms"> Mushrooms</label>
+                    <label><input type="checkbox" name="toppings" value="onions"> Onions</label>
+                    <label><input type="checkbox" name="toppings" value="olives"> Olives</label>
+                    <label><input type="checkbox" name="toppings" value="bacon"> Bacon</label>
+                    <label><input type="checkbox" name="toppings" value="ham"> Ham</label>
+                    <label><input type="checkbox" name="toppings" value="jalapeno"> Jalapeno</label>
+                    <label><input type="checkbox" name="toppings" value="salami"> Salami</label>
+                    <label><input type="checkbox" name="toppings" value="italian sausage"> Italian Sausage</label>
+                    <label><input type="checkbox" name="toppings" value="pineapple"> Pineapple</label>
+                </div>
+
+                <p>Crust Type:</p>
+                <label><input type="radio" name="crust" value="thin" required > Thin Crust</label>
+                <label><input type="radio" name="crust" value="thick" > Thick Crust</label>
+                <label><input type="radio" name="crust" value="stuffed" > Stuffed Crust</label>
+                <label><input type="radio" name="crust" value="gluten-free" > Gluten Free Crust</label>
+                <label><input type="radio" name="crust" value="cauliflower" > Cauliflower Crust</label>
+
+                <p>Extras:</p>
+                <label><input type="checkbox" name="extras[]" value="drink" > Drink</label>
+                <label><input type="checkbox" name="extras[]" value="salad" > Salad</label>
+                <label><input type="checkbox" name="extras[]" value="breadsticks" > Breadsticks</label>
+                <label><input type="checkbox" name="extras[]" value="cheese" > Cheese</label>
+                <label><input type="checkbox" name="extras[]" value="sauce" > Sauce</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Notes</legend>
+                <label>
+                    <textarea name="notes" rows="4" placeholder="Any extra instructions? (e.g. no olives, allergies, ring the doorbell)"></textarea>
+                </label>
+            </fieldset>
+
+            <button type="submit">Submit Order</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Dough Re Mi</p>
+</footer>
+<!--Adding an interactive address box-->
+<script>
+    // Toggle address field, Address box drops down
+    document.querySelectorAll('input[name="delivery"]').forEach((input) => {
+        input.addEventListener('change', function () {
+            const addressField = document.getElementById('delivery-address');
+            if (this.value === 'delivery') {
+                addressField.style.display = 'block';
+            } else {
+                addressField.style.display = 'none';
+            }
+        });
+    });
+
+    // Initialize the visibility
+    document.addEventListener('DOMContentLoaded', () => {
+        const deliveryOption = document.querySelector('input[name="delivery"]:checked').value;
+        document.getElementById('delivery-address').style.display = deliveryOption === 'delivery' ? 'block' : 'none';
+    });
+</script>
+</body>
+</html>
