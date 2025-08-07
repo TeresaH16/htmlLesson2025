@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: large;
+  margin: 0;
+  padding: 0;
+}
+/*Footer and header on JS*/
+header, footer {
+  background-color: #222;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+/*Here is the area for the index also called home*/
+.hero img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+main {
+  padding: 2rem;
+}
+/*Everything related to the product section*/
+.product-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.product-card {
+  width: 30%;
+  text-align: center;
+}
+.product-card img {
+  width: 100%;
+  max-width: 200px;
+}
+/*Here is where the form template starts*/
+form input, form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+button {
+  padding: 0.7rem 2rem;
+    color: black;
+  border: black solid 3px;
+  cursor: pointer;
+  background-color: white;
+}
+
+
